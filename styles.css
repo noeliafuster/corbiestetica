@@ -85,6 +85,8 @@ img {
   font-weight: normal;
   line-height: 1;
   margin-bottom: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-sub-text {
@@ -109,6 +111,8 @@ img {
   font-weight: normal;
   line-height: 1.1;
   margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .quote-text {
@@ -481,6 +485,8 @@ img {
 
 .testimonial-slide {
   min-width: 100%;
+  width: 100%;
+  flex: 0 0 100%;
   padding: 0 20px;
   box-sizing: border-box;
   opacity: 0.5;
@@ -668,10 +674,10 @@ img {
     gap: 0;
   }
   .hero-script-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .script-title-black {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 }
 
