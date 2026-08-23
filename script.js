@@ -115,4 +115,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Reservation Form Validation ---
+    const fechaInput = document.getElementById('fecha');
+    const horaInput = document.getElementById('hora');
+    
+    if (fechaInput && horaInput) {
+        const validateDateTime = () => {
+            const fechaVal = fechaInput.value;
+            const horaVal = horaInput.value;
+            
+            if (!fechaVal || !horaVal) return;
+            
+            const date = new Date(fechaVal);
+            const day = date.getDay(); // 0 is Sunday, 1 is Monday, etc.
+            
+            // Cerrado Martes (2) y Domingo (0)
+            if (day === 0 || day === 2) {
+                alert('Lo sentimos, los martes y domingos estamos cerrados. Por favor, elige otro día.');
+                fechaInput.value = '';
+                return;
+            }
+            
+            const [hours, minutes] = horaVal.split(':').map(Number);
+            const time = hours + minutes / 60;
+            
+            // Horario general: 09:30 (9.5) a 20:00 (20)
+            if (time < 9.5 || time > 20) {
+                alert('El horario de apertura es a partir de las 09:30 hasta las 20:00.');
+                horaInput.value = '';
+                return;
+            }
+            
+            // Descanso de 13:30 (13.5) a 16:00 (16) excepto el viernes (5) que es ininterrumpido
+            // Y el sábado (6) que cerramos a las 13:30
+            if (day === 6 && time > 13.5) {
+                alert('Los sábados cerramos a las 13:30.');
+                horaInput.value = '';
+                return;
+            }
+            
+            if (day !== 5 && day !== 6 && time >= 13.5 && time < 16) {
+                alert('Nuestro horario de descanso es de 13:30 a 16:00.');
+                horaInput.value = '';
+                return;
+            }
+        };
+
+        fechaInput.addEventListener('change', validateDateTime);
+        horaInput.addEventListener('change', validateDateTime);
+    }
 });
