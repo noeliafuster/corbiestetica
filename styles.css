@@ -24,6 +24,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -33,6 +35,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  width: 100%;
 }
 
 a {
@@ -464,6 +467,7 @@ img {
 
 .carousel-container {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -662,6 +666,12 @@ img {
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  .hero-script-title {
+    font-size: 3rem;
+  }
+  .script-title-black {
+    font-size: 2.8rem;
   }
 }
 
