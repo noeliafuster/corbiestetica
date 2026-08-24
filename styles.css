@@ -485,18 +485,23 @@ img {
 }
 
 .carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .testimonial-slide {
-  min-width: 100%;
+  display: none;
   width: 100%;
-  flex: 0 0 100%;
-  padding: 0 20px;
+  padding: 0 15px;
   box-sizing: border-box;
-  opacity: 0.5;
+  opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+.testimonial-slide.active {
+  display: block;
+  opacity: 1;
 }
 
 .testimonial-slide.active {

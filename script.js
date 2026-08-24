@@ -85,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const slideCount = slides.length;
         
         const updateCarousel = (index) => {
-            track.style.transform = `translateX(-${index * 100}%)`;
-            
             slides.forEach((slide, i) => {
                 if (i === index) slide.classList.add('active');
                 else slide.classList.remove('active');
