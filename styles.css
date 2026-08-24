@@ -221,7 +221,7 @@ img {
 
 /* When scrolled */
 .scrolled-header {
-  background-image: url('img/fondo_footer2.jpg');
+  background-image: url('img/fondo papel.jpg');
   background-size: cover;
   background-position: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -365,6 +365,7 @@ img {
   z-index: 2;
   padding: 0 5% 10% 10%;
   max-width: 800px;
+  width: 100%;
 }
 
 /* --- HERO SECTION 2 (TEXTURED) --- */
@@ -899,7 +900,9 @@ img {
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background-color: #000000;
+    background-image: url('img/fondo papel.jpg');
+    background-size: cover;
+    background-position: center;
     flex-direction: column;
     align-items: flex-start;
     padding: 80px 30px;
@@ -1042,5 +1045,21 @@ img {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-script-title {
+    font-size: 2.5rem;
+  }
+  .script-title-black {
+    font-size: 2.5rem;
+  }
+  .reserva-form {
+    padding: 2rem 1.5rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
