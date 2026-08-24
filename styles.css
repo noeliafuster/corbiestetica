@@ -398,8 +398,9 @@ img {
 
 .servicios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  max-width: 100%;
 }
 
 .servicio-card {
@@ -575,6 +576,7 @@ img {
 /* --- OPINIONES Y RESERVA (SPLIT LAYOUT) --- */
 .opiniones-reserva-section {
   background-color: var(--color-bg-light);
+  overflow: hidden;
 }
 
 .split-layout {
@@ -582,17 +584,26 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 992px) {
   .split-layout {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
 }
 
 .split-left {
   padding-right: 2rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.split-right {
+  min-width: 0;
+  overflow: hidden;
 }
 
 @media (max-width: 992px) {
@@ -888,6 +899,7 @@ img {
     align-items: flex-start;
     padding: 80px 30px;
     transition: left 0.3s ease;
+    z-index: 9999;
   }
   .nav-menu.active {
     left: 0;
@@ -901,6 +913,10 @@ img {
     margin: 1.5rem 0;
     margin-left: 0;
   }
+  .nav-links a {
+    color: #ffffff !important;
+    font-size: 14px;
+  }
   .nav-extras {
     flex-direction: column;
     align-items: flex-start;
@@ -912,12 +928,45 @@ img {
   .social-icons a {
     margin-left: 0;
     margin-right: 15px;
+    color: #ffffff !important;
   }
   .btn-pedir-cita {
     margin-left: 0;
   }
   .hero-overlay-text {
     padding: 0 5% 5% 5%;
+  }
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    overflow: hidden;
+  }
+  .split-left {
+    padding-right: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .split-right {
+    width: 100%;
+    overflow: hidden;
+  }
+  .carousel-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .testimonial-slide {
+    padding: 0 10px;
+  }
+  .author-details h4 {
+    font-size: 0.95rem;
+  }
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .google-rating {
+    flex-wrap: wrap;
   }
   .newsletter-form {
     flex-direction: column;
@@ -932,6 +981,9 @@ img {
     width: 50px;
     height: 50px;
     font-size: 30px;
+  }
+  .servicios-grid {
+    grid-template-columns: 1fr;
   }
 }
 
